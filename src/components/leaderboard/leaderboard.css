@@ -1,0 +1,206 @@
+body {
+  background-image: url("C:/Users/ALAN/OneDrive/Desktop/assignment/frontend_assignment/src/assets/banner.png");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 50px;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: gold;
+  gap: 30px;
+  margin: 0 10px;
+}
+
+.leaderboard {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.leaderboard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 40rem; 
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.leaderboard ul::-webkit-scrollbar {
+  display: none; 
+}
+
+.leaderboard li {
+  margin: 10px 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: bold;
+  border-bottom-right-radius: 40px;
+  padding: 5px;
+  flex-wrap: wrap;
+  animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.leaderboard li:hover {
+  border: 1px solid white;
+}
+
+.leaderboard .li-1 {
+  background-image: linear-gradient( to right, #BE9838,#EBDA8F, #BE9838);
+
+  .rank{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #BE9838;
+  }
+
+  .lead{
+    color: black;
+  }
+}
+
+.leaderboard .li-2 {
+  background-image: linear-gradient(to right, #a4a5a5, #dcdddd, #a4a5a5);
+
+  .rank{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #a4a5a5;
+  }
+  .lead{
+    color: black;
+  }
+}
+
+.leaderboard .li-3 {
+  background-image: linear-gradient(to right, #8b4622,#a9552f, #8b4622 );
+
+  .rank{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #8b4622;
+  }
+
+  .lead{
+    color: black;
+  }
+}
+
+
+.rank {
+  padding: 10px 15px;
+  background-color: white;
+  color: black;
+  font-weight: 900;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.lead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.lead > div {
+  margin: 0 10px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.lead .score {
+  margin-inline: 20px;
+  text-align: right;
+}
+
+.reward {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .header,
+  .sub-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .leaderboard li {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .rank {
+    margin: 8px 5px;
+  }
+
+  .lead {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .lead > div {
+    margin: 5px 0;
+  }
+
+  .reward {
+    margin: 10px 0 0 0;
+  }
+}
+
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
