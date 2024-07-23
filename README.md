@@ -26,4 +26,4 @@ This project is a leaderboard application built with React and Redux. It display
    git clone https://github.com/Dervin29/frontend_assignment.git
    cd frontend_assignment
 ## Hosted Link
-[Link Text](https://gillys.netlify.app/)
+[website url](https://gillys.netlify.app/)
