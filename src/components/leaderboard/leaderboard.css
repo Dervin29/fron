@@ -164,9 +164,10 @@ h1 {
   flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .header,
   .sub-header {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -208,8 +209,6 @@ h2{
 
   animation: slideInLeft 1s ease-in-out forwards;
 }
-
-
 
 .recent-entry {
   margin: 10px 0px;
