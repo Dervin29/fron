@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addScore } from '../store/actions';
+import { addScore, setRecentEntry } from '../store/actions';
 import './addscore.css';
 
 const AddScorePopup = ({ closePopup }) => {
@@ -11,15 +11,13 @@ const AddScorePopup = ({ closePopup }) => {
   const [error, setError] = useState('');
   const dispatch = useDispatch();
 
-
-
   const formatTimePart = (part) => {
     return part.length === 1 ? `0${part}` : part;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username.trim().length === 0 || minutes.trim().length === 0 || !seconds.trim().length === 0 || !milliseconds.trim().length === 0) {
+    if (username.trim().length === 0 || minutes.trim().length === 0 || seconds.trim().length === 0 || milliseconds.trim().length === 0) {
       setError('Please enter a valid username and time');
       return;
     }
@@ -28,6 +26,7 @@ const AddScorePopup = ({ closePopup }) => {
     const formattedMilliseconds = formatTimePart(milliseconds);
     const score = `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`;
     dispatch(addScore(username, score));
+    dispatch(setRecentEntry({ username, score }));
     setUsername('');
     setMinutes('');
     setSeconds('');

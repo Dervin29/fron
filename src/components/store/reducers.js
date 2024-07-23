@@ -1,4 +1,4 @@
-import { ADD_SCORE } from './actions';
+import { ADD_SCORE, SET_RECENT_ENTRY } from './actions';
 
 const initialState = {
   scores: [
@@ -23,8 +23,15 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_SCORE:
-      const newScores = [...state.scores, action.payload];
-      return { ...state, scores: newScores };
+      return {
+        ...state,
+        scores: [...state.scores, action.payload],
+      };
+    case SET_RECENT_ENTRY:
+      return {
+        ...state,
+        recentEntry: action.payload,
+      };
     default:
       return state;
   }
