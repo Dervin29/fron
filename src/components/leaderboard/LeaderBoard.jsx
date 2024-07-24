@@ -72,7 +72,6 @@ const Leaderboard = () => {
                 <div className="rank">{recentEntryRank}</div>
                 <div>{recentEntry.username}</div>
               </div>
-
               <div className="score">{recentEntry.score}</div>
             </div>
           </div>
